@@ -54,7 +54,7 @@ However, if we lowpass a 128 Hz signal and lowpass a 30 Hz signal we might get v
 
 Therefore, we might have issues with aliasing of high-frequency gait components when using a low-passed ActiGraph signal.
 
-Additionaly, an IMU/MARG system can make use of sensor fusion algorithms like the [Madgwick filter](https://doi.org/10.1109/ICORR.2011.5975346) to estimate orientation quaternions, in order to figure out how they are rotated in a global frame. This helps with estimating the effect of gravity when the sensor is in motion. This is not possible with only an accelerometer. There are some accelerometer-only methods that can give an estimate (for example in [Moe-Nilssen 1998](https://doi.org/10.1016/S0268-0033(98)00089-8) but these will generally be much less accurate.
+Additionaly, an IMU/MARG system can make use of sensor fusion algorithms like the [Madgwick filter](https://doi.org/10.1109/ICORR.2011.5975346) to estimate orientation quaternions, in order to figure out how they are rotated in a global frame. This helps with estimating the effect of gravity when the sensor is in motion. This is not possible with only an accelerometer. There are some accelerometer-only methods that can give an estimate (for example in [Moe-Nilssen 1998](https://doi.org/10.1016/S0268-0033(98)00089-8)) but these will generally be much less accurate.
 
 # Frequency components of gait
 
