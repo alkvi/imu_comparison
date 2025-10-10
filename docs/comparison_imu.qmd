@@ -95,6 +95,7 @@ Note that a cadence of 117 steps/min and stride length of 1.58 m is average for 
 See [comparison_1](comparison_1_detail.html)
 
 We find an average cadence of 117.58 from the Opal data, and 116.73 from the ActiGraph data.
+
 Average stride lengths: Opal 1.6 m, ActiGraph 1.57 m.
 
 ## Comparison 2 - single subject, lab data, approx 4 min
@@ -102,6 +103,7 @@ Average stride lengths: Opal 1.6 m, ActiGraph 1.57 m.
 See [comparison_2](comparison_2_lab.html)
 
 We find an average cadence of 118.57 from the Opal data, and 118.94 from the ActiGraph data.
+
 Average stride lengths: Opal 1.51 m, ActiGraph 1.48 m.
 
 ## Comparison 3 - single subject, outside data, approx 12 min
@@ -109,4 +111,5 @@ Average stride lengths: Opal 1.51 m, ActiGraph 1.48 m.
 See [comparison_3](comparison_3_outside.html)
 
 We find an average cadence of 115.47 from the Opal data, and 115.88 from the ActiGraph data.
+
 Average stride lengths: Opal 1.528 m, ActiGraph 1.521 m.
