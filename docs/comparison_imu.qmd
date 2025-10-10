@@ -88,14 +88,25 @@ Data was collected simultaneously for walking in a lab setting (back and forth 1
 
 Synchronization was performed by standing still for 10 seconds, jumping 3 times, standing still for another 10 seconds, and then starting the walking bout. Data was then manually synchronized to the jumping point in [sync_imu_data.py](link).
 
-## Comparison 1 - detailed fragment
+Note that a cadence of 117 steps/min and stride length of 1.58 m is average for males (https://ouhsc.edu/bserdac/dthompso/web/gait/knmatics/stride.htm).
+
+## Comparison 1 - single subject, detailed fragment, approx 20 seconds
 
 See [comparison_1](comparison_1_detail.html)
 
-## Comparison 2 - lab data
+We find an average cadence of 117.58 from the Opal data, and 116.73 from the ActiGraph data.
+Average stride lengths: Opal 1.6 m, ActiGraph 1.57 m.
 
-TODO
+## Comparison 2 - single subject, lab data, approx 4 min
 
-## Comparison 3 - outside data
+See [comparison_2](comparison_2_lab.html)
 
-TODO
+We find an average cadence of 118.57 from the Opal data, and 118.94 from the ActiGraph data.
+Average stride lengths: Opal 1.51 m, ActiGraph 1.48 m.
+
+## Comparison 3 - single subject, outside data, approx 12 min
+
+See [comparison_3](comparison_3_outside.html)
+
+We find an average cadence of 115.47 from the Opal data, and 115.88 from the ActiGraph data.
+Average stride lengths: Opal 1.528 m, ActiGraph 1.521 m.
