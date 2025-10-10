@@ -7517,61 +7517,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Comparison-Opal-data-and-ActiGraph-data---detailed-walking-fragment">Comparison Opal data and ActiGraph data - detailed walking fragment<a class="anchor-link" href="#Comparison-Opal-data-and-ActiGraph-data---detailed-walking-fragment">¶</a></h1><h2 id="Specifications">Specifications<a class="anchor-link" href="#Specifications">¶</a></h2><p>Simultaneous data was recorded from a lumbar APDM Opal sensor and a hip ActiGraph wGT3X-BT sensor.</p>
-<p>Opal specifications (from APDM Developer's guide):</p>
-<ul>
-<li>3-axis accelerometer</li>
-<li>3-axis gyroscope</li>
-<li>3-axis magnetometer</li>
-<li>128 Hz sampling frequency</li>
-<li>accelerometer range is +-58.8 m/s^2</li>
-<li>The X and Y axis gyros have a range of +-34:9 rad/s (2000 dps)</li>
-<li>The Z axis gyro has a range of +-26:8 rad/s (1500 dps)</li>
-<li>Magnetometers have a range of +-6 Gauss</li>
-</ul>
-<p>ActiGraph specifications (website):</p>
-<ul>
-<li>3-axis accelerometer</li>
-<li>30 Hz sampling frequency</li>
-<li>range +-8G</li>
-</ul>
-<h2 id="Pipeline-and-possible-orientation-and-aliasing-concerns">Pipeline and possible orientation and aliasing concerns<a class="anchor-link" href="#Pipeline-and-possible-orientation-and-aliasing-concerns">¶</a></h2><p>We want to run the Mobilise-D MobGap pipeline (<a href="https://github.com/mobilise-d/mobgap">https://github.com/mobilise-d/mobgap</a>).</p>
-<p>The original implementation uses a 100 Hz 3-axis IMU/MARG data (accelerometer, gyroscope, magnetometer). The Opal sensor satisfies these specifications, but the ActiGraph is obviously less powerful.</p>
-<p>Most algorithms in the MobGap pipeline lowpass to frequencies below 10 Hz. Gait sequence detection also resample down to 40 Hz as a first step, without lowpassing first.</p>
-<p>However, if we lowpass a 128 Hz signal and lowpass a 30 Hz signal we might get very different results. This depends on if there are frequency components in the data that are higher than the Nyqvist frequency of either system. With the Opal, we can comfortably filter out frequency components up to 64 Hz. For the Actigraph however, we are quite strongly limited to 15 Hz.</p>
-<p>Therefore, we might have issues with aliasing of high-frequency gait components when using a low-passed ActiGraph signal.</p>
-<p>Additionaly, an IMU/MARG system can make use of sensor fusion algorithms like the Madgwick filter (<a href="https://doi.org/10.1109/ICORR.2011.5975346">https://doi.org/10.1109/ICORR.2011.5975346</a>) to estimate orientation quaternions, in order to figure out how they are rotated in a global frame. This helps with estimating the effect of gravity when the sensor is in motion. This is not possible with only an accelerometer. There are some accelerometer-only methods that can give an estimate (for example <a href="https://doi.org/10.1016/S0268-0033(98)00089-8">https://doi.org/10.1016/S0268-0033(98)00089-8</a>) but these will generally be much less accurate.</p>
-<h2 id="Frequency-components-of-gait">Frequency components of gait<a class="anchor-link" href="#Frequency-components-of-gait">¶</a></h2><p>Are there frequency components in gait data above 15 Hz that would make our ActiGraph data unusable?</p>
-<p>There are a couple of articles looking at this.</p>
-<ul>
-<li>Frequency evaluation of gait trunk acceleration signal: A longitudinal study (<a href="https://doi.org/10.1016/j.gaitpost.2017.07.057">https://doi.org/10.1016/j.gaitpost.2017.07.057</a>) or <a href="https://www.esb-ita.it/wp-content/uploads/2017/09/G16_Tamburini_ESBITA2017.pdf">PDF</a></li>
-</ul>
-<blockquote>
-<p>Results highlighted that: the harmonic content (at 98%) of the acceleration signal for all the analysed population, with exception of the adolescents, is below 30 Hz where the high frequencies contribute is due to the AP direction.</p>
-</blockquote>
-<ul>
-<li>The frequency content of gait (<a href="https://doi.org/10.1016/0021-9290(85)90043-0">https://doi.org/10.1016/0021-9290(85)90043-0</a>)</li>
-</ul>
-<blockquote>
-<p>In order to preserve 99% of the signal power in gait, positional fidelity must be maintained up to 15 Hz which for a sampled system requires a minimum of 30 Hz sampling rate.</p>
-</blockquote>
-<ul>
-<li>Adaptive algorithm for gait segmentation using a single IMU in the thigh pocket (<a href="https://doi.org/10.1109/JSEN.2022.3177951">https://doi.org/10.1109/JSEN.2022.3177951</a>)</li>
-</ul>
-<blockquote>
-<p>Since the amplitude spectra of gait signals is concentrated below 15 Hz [34]</p>
-</blockquote>
-<ul>
-<li><p>[34] is: Frequency content of whole body gait kinematic data (<a href="https://doi.org/10.1109/86.296343">https://doi.org/10.1109/86.296343</a>)</p>
-</li>
-<li><p>A Systematic Method for Outlier Detection in Human Gait Data (<a href="https://doi.org/10.1109/ICORR55369.2022.9896411">https://doi.org/10.1109/ICORR55369.2022.9896411</a>)</p>
-</li>
-</ul>
-<blockquote>
-<p>This is based on the frequency components of gait data, which are usually much lower (1-3 Hz) compared to the usually high acquisition frequency (usually 100 Hz)</p>
-</blockquote>
-<p>So perhaps we might still be OK!</p>
-<h2 id="Comparison">Comparison<a class="anchor-link" href="#Comparison">¶</a></h2><p>Data was collected simultaneously for walking in a lab setting (back and forth 10 times across a 30 m corridor) and while walking outside. The lab walk was more consistent speed, while the outside was varied (pausing, much more turning, up and down in elevation, etc).</p>
+<h1 id="Comparison-Opal-data-and-ActiGraph-data---detailed-walking-fragment">Comparison Opal data and ActiGraph data - detailed walking fragment<a class="anchor-link" href="#Comparison-Opal-data-and-ActiGraph-data---detailed-walking-fragment">¶</a></h1><h2 id="Comparison">Comparison<a class="anchor-link" href="#Comparison">¶</a></h2><p>Data was collected simultaneously for walking in a lab setting (back and forth 10 times across a 30 m corridor) and while walking outside. The lab walk was more consistent speed, while the outside was varied (pausing, much more turning, up and down in elevation, etc).</p>
 <p>Synchronization was performed by standing still for 10 seconds, jumping 3 times, standing still for another 10 seconds, and then starting the walking bout. Data was then manually synchronized to the jumping point in sync_imu_data.py.</p>
 <p>In this file, let's inspect a detailed fragment of the lab walking data to see the effects of possible aliasing (and upsampling, because some algorithms use an internal sampling frequency of 40 Hz). Let's also run gait sequence detection, initial contact detection, cadence estimation and stride length estimation with MobGap functions and compare.</p>
 <h1 id="Raw-data">Raw data<a class="anchor-link" href="#Raw-data">¶</a></h1><p>Below we read and visualize the raw data for the lab based walking bout (for 1 participant). Note that the Opal acceleration data is in m/s^2 and ActiGraph in units of g by default.</p>
