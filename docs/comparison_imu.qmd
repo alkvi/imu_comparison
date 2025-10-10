@@ -21,6 +21,12 @@ knitr::opts_chunk$set(fig.width=10, fig.height=5)
 
 ```
 
+# Repository
+
+GitHub repository with all code and data:
+
+[https://github.com/alkvi/imu_comparison](https://github.com/alkvi/imu_comparison)
+
 # Specifications
 
 Simultaneous data was recorded from a lumbar APDM Opal sensor and a hip ActiGraph wGT3X-BT sensor.
