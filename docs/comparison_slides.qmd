@@ -1,0 +1,93 @@
+---
+title: "Comparison Opal and ActiGraph in MobGap pipeline"
+bibliography: C:/pandoc/zotero_lib.bib
+format: 
+  revealjs:
+    slide-level: 2
+    slide-number: true
+    progress: true
+    controls: true
+    mouse-wheel: false
+    embed-resources: true
+
+
+editor: source
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.width=10, fig.height=5) 
+
+```
+
+
+## Specifications {.smaller}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Opal
+
+- 3-axis accelerometer
+- 3-axis gyroscope
+- 3-axis magnetometer
+- 128 Hz sampling frequency
+- accelerometer range is +-58.8 m/s^2
+- The X and Y axis gyros have a range of +-34:9 rad/s (2000 dps)
+- The Z axis gyro has a range of +-26:8 rad/s (1500 dps)
+- Magnetometers have a range of +-6 Gauss
+:::
+
+::: {.column width="60%"}
+ActiGraph
+
+- 3-axis accelerometer
+- 30 Hz sampling frequency
+- range +-8G
+:::
+
+::::
+
+# Concerns {.smaller}
+
+- Low sampling frequency
+    - Aliasing of high frequency components
+
+- Lack of gyroscope
+    - Sensor fusion for orientation estimation cannot be used
+
+## Low sampling rate {.smaller}
+
+Sampling a high frequency component (red) at a low sampling rate will cause the high frequency component to look like a low frequency component (blue).
+
+This could get mixed up with real low-frequency components.
+
+Additionally, when we then low-pass the data, it might become distorted.
+
+![](img/alias.png)
+
+## Low sampling rate {.smaller}
+
+This might not be such a large problem in gait data. 
+
+There is a lot of power concentrated to below 15 Hz. 
+
+See articles: 
+
+<https://alkvi.github.io/imu_comparison/#frequency-components-of-gait>
+
+## Orientation estimation {.smaller}
+
+The MobGap implementation uses the [Madgwick filter](https://doi.org/10.1109/ICORR.2011.5975346) to estimate global frame orientation, to better estimate stride length and walking speed.
+
+This requires a gyroscope (and preferably a magnetometer).
+
+The ActiGraph does not have this.
+
+However, to at least counteract variations in ActiGraph placement, the vertical axis could be aligned with gravity before each gait sequence, if we detect a stable period before the gait sequence. 
+
+For example using something like [Moe-Nilssen 1998](https://doi.org/10.1016/S0268-0033(98)00089-8).
+
+## Comparison
+
+- TODO

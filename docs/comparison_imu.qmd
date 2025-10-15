@@ -25,7 +25,11 @@ knitr::opts_chunk$set(fig.width=10, fig.height=5)
 
 GitHub repository with all code and data:
 
-[https://github.com/alkvi/imu_comparison](https://github.com/alkvi/imu_comparison)
+<https://github.com/alkvi/imu_comparison>
+
+# Presentation
+
+[Slides](https://github.com/alkvi/imu_comparison/comparison_slides.html)
 
 # Specifications
 
@@ -119,3 +123,10 @@ See [comparison_3](comparison_3_outside.html)
 We find an average cadence of 115.47 from the Opal data, and 115.88 from the ActiGraph data.
 
 Average stride lengths: Opal 1.528 m, ActiGraph 1.521 m.
+
+## Comparison 4 - multiple subjects, all sessions
+
+See [comparison_4](comparison_4_multiple.html)
+
+![](img/global_walk_speed_comparison.png)
+
