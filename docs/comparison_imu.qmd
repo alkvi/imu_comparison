@@ -29,7 +29,7 @@ GitHub repository with all code and data:
 
 # Presentation
 
-[Slides](https://github.com/alkvi/imu_comparison/comparison_slides.html)
+[Slides](comparison_slides.html)
 
 # Specifications
 
