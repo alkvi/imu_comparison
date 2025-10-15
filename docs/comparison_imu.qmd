@@ -96,7 +96,7 @@ So perhaps we might still be OK!
 
 Data was collected simultaneously for walking in a lab setting (back and forth 10 times across a 30 m corridor) and while walking outside. The lab walk was more consistent speed, while the outside was varied (pausing, much more turning, up and down in elevation, etc).
 
-Synchronization was performed by standing still for 10 seconds, jumping 3 times, standing still for another 10 seconds, and then starting the walking bout. Data was then manually synchronized to the jumping point in [sync_imu_data.py](link).
+Synchronization was performed by standing still for 10 seconds, jumping 3 times, standing still for another 10 seconds, and then starting the walking bout. Data was then manually synchronized to the jumping point in [sync_imu_data.py](https://github.com/alkvi/imu_comparison/blob/main/sync_imu_data.py).
 
 Note that a cadence of 117 steps/min and stride length of 1.58 m is average for males (https://ouhsc.edu/bserdac/dthompso/web/gait/knmatics/stride.htm).
 
