@@ -25,7 +25,7 @@ knitr::opts_chunk$set(fig.width=10, fig.height=5)
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 Opal
 
 - 3-axis accelerometer
@@ -38,8 +38,8 @@ Opal
 - Magnetometers have a range of +-6 Gauss
 :::
 
-::: {.column width="60%"}
-ActiGraph
+::: {.column width="50%"}
+ActiGraph wGT3X-BT
 
 - 3-axis accelerometer
 - 30 Hz sampling frequency
@@ -88,6 +88,46 @@ However, to at least counteract variations in ActiGraph placement, the vertical 
 
 For example using something like [Moe-Nilssen 1998](https://doi.org/10.1016/S0268-0033(98)00089-8).
 
-## Comparison
+## Comparison {.smaller}
 
-- TODO
+The same MobGap pipeline was run on both lumbar Opal and hip ActiGraph data.
+
+- Gait sequence identification
+- Intial contact detection
+- Cadence estimation
+- Stride length estimation
+- Walking speed estimation
+
+## Comparison - filtered data {.smaller}
+
+Here is the same snippet of gait data from the Opal and ActiGraph bandpassed between 0.15 Hz and 3.14 Hz, as used in [initial contact detection](https://github.com/mobilise-d/mobgap/blob/main/src/mobgap/initial_contacts/_icd_ionescu.py).
+
+There does not seem to be issues with high frequency components, at least during stable gait such as this example.
+
+![](img/bandpassed_snippet.png)
+
+## Comparison - gait sequence and initial contacts {.smaller}
+
+This a comparison of detected gait sequences and initial contacts for an approximately 8 minute walk outside including variations in pace, turning, some stopping. There is a difference of 4 found initial contacts (772 vs 768).
+
+![](img/ic_detection_outside_subj2.png)
+
+## Comparison - stride length in lab {.smaller}
+
+This comparison of stride length without orientation estimation (left) vs with orientation estimation (right) illustrates the effect a slight systematic error for the ActiGraph, but subject parameters can clearly be delineated.
+
+::: {.column width="50%"}
+![](img/lab_stride_length.png)
+:::
+
+::: {.column width="50%"}
+![](img/lab_global_stride_length.png)
+:::
+
+## Comparison - stride length outside {.smaller}
+
+![](img/global_stride_length_comparison.png)
+
+## Comparison - walking speed outside {.smaller}
+
+![](img/global_walk_speed_comparison.png)
