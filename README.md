@@ -22,6 +22,8 @@ If on Mac or Linux:
 source venv/bin/activate
 ~~~
 
+Start the notebooks to play around with the code:
+
 ~~~
 python -m pip install -r requirements.txt
 jupyter notebook
