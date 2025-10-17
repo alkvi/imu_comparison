@@ -98,6 +98,8 @@ The same MobGap pipeline was run on both lumbar Opal and hip ActiGraph data.
 - Stride length estimation
 - Walking speed estimation
 
+Orientation estimation was done for Opal, while ActiGraph was left as-is. A possible addition could be the vertical alignment before a gait sequence.
+
 ## Comparison - filtered data {.smaller}
 
 Here is the same snippet of gait data from the Opal and ActiGraph bandpassed between 0.15 Hz and 3.14 Hz, as used in [initial contact detection](https://github.com/mobilise-d/mobgap/blob/main/src/mobgap/initial_contacts/_icd_ionescu.py).
