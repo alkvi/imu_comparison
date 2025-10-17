@@ -114,7 +114,7 @@ This a comparison of detected gait sequences and initial contacts for an approxi
 
 ## Comparison - stride length in lab {.smaller}
 
-This comparison of stride length without orientation estimation (left) vs with orientation estimation (right) illustrates a slight systematic error for the ActiGraph, but subject parameters can clearly be delineated.
+This comparison of stride length without orientation estimation (left) vs with orientation estimation (right) illustrates a slight systematic error for the ActiGraph, but subject parameters can clearly be delineated. Values are time binned (the `_per_sec_` MobGap outputs).
 
 ::: {.column width="50%"}
 ![](img/lab_stride_length.png)
